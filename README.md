@@ -112,7 +112,7 @@ If you use this code or paper, please cite:
   title     = {Data Science Application in ICT: 5G Resource Allocation},
   year      = {2025},
   publisher = {GitHub},
-  url       = {https://github.com/<your-username>/SVOC_2025}
+  url       = {https://github.com/dmitthedazed/SVOC_2025}
 }
 ```
 
