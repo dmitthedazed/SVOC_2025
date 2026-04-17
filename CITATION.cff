@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use this code or paper, please cite it as below."
+type: software
+title: "Data Science Application in ICT: 5G Resource Allocation"
+authors:
+  - family-names: Savin
+    given-names: Dmitrii
+    affiliation: "Institute of Multimedia Information and Communication Technologies, FEI STU in Bratislava"
+    email: xsavin@stuba.sk
+date-released: "2025-01-01"
+license: MIT
+repository-code: "https://github.com/<your-username>/SVOC_2025"
+abstract: >
+  This project applies Data Science techniques — data cleaning, feature
+  engineering, and a RandomForestRegressor — to analyse and predict
+  resource allocation in 5G networks using the 5G Quality of Service
+  dataset (Sobhy, 2023). The study achieves an R² of 0.922 and
+  demonstrates that application type and required bandwidth are the
+  dominant drivers of resource allocation decisions.
+keywords:
+  - 5G
+  - resource allocation
+  - machine learning
+  - random forest
+  - network QoS
+  - data science
+references:
+  - type: dataset
+    title: "5G Resource Allocation Dataset: Optimizing Band"
+    authors:
+      - family-names: Sobhy
+        given-names: Omar
+    year: 2023
+    url: "https://kaggle.com/datasets/omarsobhy14/5g-quality-of-service"
