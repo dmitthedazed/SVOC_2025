@@ -6,11 +6,15 @@ Predicting how 5G networks allocate resources across apps with a random forest.
 
 Paper *Data Science Application in ICT* · Dmitrii Savin · FEI STU Bratislava
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Python](https://img.shields.io/badge/Python-3-3776AB?logo=python&logoColor=white&style=flat-square)
+[![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey?style=flat-square)](LICENSE)
 
 <img src="figures/dashboard.png" alt="Results dashboard" width="720">
 
 </div>
+
+> [!NOTE]
+> Archived. The paper is finished, so this repository is read-only and kept for reference.
 
 ## Results
 
@@ -75,4 +79,4 @@ paper/          LaTeX source of the paper
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE) © Dmytrii Savin
