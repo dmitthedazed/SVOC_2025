@@ -7,6 +7,11 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+FIGURES = ROOT / "figures"
+FIGURES.mkdir(exist_ok=True)
 
 # ── Style ──────────────────────────────────────────────────────────────────────
 sns.set_theme(style="whitegrid", font_scale=1.15)
@@ -21,7 +26,7 @@ PALETTE = sns.color_palette("tab20")
 
 # ── 1. Load & clean ────────────────────────────────────────────────────────────
 
-df = pd.read_csv("Quality of Service 5G.csv")
+df = pd.read_csv(ROOT / "data" / "qos_5g.csv")
 
 df["Signal_Strength"] = df["Signal_Strength"].str.replace(" dBm", "", regex=False).astype(float)
 df["Latency"] = df["Latency"].str.replace(" ms", "", regex=False).astype(float)
@@ -141,8 +146,8 @@ ax.set_title("Predicted Resource Allocation Trends by Signal Strength",
 ax.legend(title="Application Type", bbox_to_anchor=(1.01, 1), loc="upper left", fontsize=9)
 ax.set_xlim(signal_range[0], signal_range[-1])
 plt.tight_layout()
-plt.savefig("fig1.png", dpi=150)
-plt.savefig("predicted_trends.png", dpi=150)
+plt.savefig(FIGURES / "fig1.png", dpi=150)
+plt.savefig(FIGURES / "predicted_trends.png", dpi=150)
 plt.close()
 
 # ── Fig 2: Resource allocation by app type — strip plot (data is discrete) ─────
@@ -165,8 +170,8 @@ ax.set_title("Resource Allocation Distribution by Application Type\n"
 ax.invert_yaxis()
 ax.set_xlim(45, 95)
 plt.tight_layout()
-plt.savefig("fig2.png", dpi=150)
-plt.savefig("resource_allocation_by_app.png", dpi=150)
+plt.savefig(FIGURES / "fig2.png", dpi=150)
+plt.savefig(FIGURES / "resource_allocation_by_app.png", dpi=150)
 plt.close()
 
 # ── Fig 3: Feature importance ──────────────────────────────────────────────────
@@ -181,8 +186,8 @@ ax.set_xlabel("Importance Score")
 ax.invert_yaxis()
 ax.set_xlim(0, feat_imp["Importance"].max() * 1.15)
 plt.tight_layout()
-plt.savefig("fig3.png", dpi=150)
-plt.savefig("feature_importance.png", dpi=150)
+plt.savefig(FIGURES / "fig3.png", dpi=150)
+plt.savefig(FIGURES / "feature_importance.png", dpi=150)
 plt.close()
 
 # ── Fig 4: Predicted vs actual, dots coloured by absolute error ────────────────
@@ -205,7 +210,7 @@ ax.set_title(
 )
 ax.legend(fontsize=10)
 plt.tight_layout()
-plt.savefig("fig4.png", dpi=150)
+plt.savefig(FIGURES / "fig4.png", dpi=150)
 plt.close()
 
 # ── Fig 5: Signal strength vs resource allocation (Y-jittered) ────────────────
@@ -221,7 +226,7 @@ ax.set_ylabel("Resource Allocation (%)", fontsize=12)
 ax.set_title("Signal Strength vs Resource Allocation", fontsize=14, fontweight="bold")
 ax.legend(title="App Type", bbox_to_anchor=(1.01, 1), loc="upper left", fontsize=8)
 plt.tight_layout()
-plt.savefig("signal_vs_resource.png", dpi=150)
+plt.savefig(FIGURES / "signal_vs_resource.png", dpi=150)
 plt.close()
 
 # ── Fig 6: Latency vs resource allocation (Y-jittered) ────────────────────────
@@ -237,7 +242,7 @@ ax.set_ylabel("Resource Allocation (%)", fontsize=12)
 ax.set_title("Latency vs Resource Allocation", fontsize=14, fontweight="bold")
 ax.legend(title="App Type", bbox_to_anchor=(1.01, 1), loc="upper left", fontsize=8)
 plt.tight_layout()
-plt.savefig("latency_vs_resource.png", dpi=150)
+plt.savefig(FIGURES / "latency_vs_resource.png", dpi=150)
 plt.close()
 
 # ── Fig 7: Bandwidth efficiency ────────────────────────────────────────────────
@@ -254,7 +259,7 @@ ax.set_xlabel("Allocated / Required Bandwidth")
 ax.legend(fontsize=10)
 ax.set_xlim(0, bw_sorted.max() * 1.12)
 plt.tight_layout()
-plt.savefig("bandwidth_efficiency.png", dpi=150)
+plt.savefig(FIGURES / "bandwidth_efficiency.png", dpi=150)
 plt.close()
 
 # ── Fig 8: Dashboard (2×2) ─────────────────────────────────────────────────────
@@ -306,7 +311,7 @@ ax3.set_xlim(0, bw_dash.max() * 1.14)
 
 fig.suptitle("5G Resource Allocation — Analysis Dashboard",
              fontsize=17, fontweight="bold")
-plt.savefig("dashboard.png", dpi=150, bbox_inches="tight")
+plt.savefig(FIGURES / "dashboard.png", dpi=150, bbox_inches="tight")
 plt.close()
 
 print("\nAll figures saved. Done.")

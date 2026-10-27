@@ -8,7 +8,7 @@ Paper *Data Science Application in ICT* · Dmitrii Savin · FEI STU Bratislava
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-<img src="dashboard.png" alt="Results dashboard" width="720">
+<img src="figures/dashboard.png" alt="Results dashboard" width="720">
 
 </div>
 
@@ -32,12 +32,12 @@ pip install -r requirements.txt
 python analysis.py
 ```
 
-The figures are saved as PNGs next to the script.
+Figures are written to `figures/`.
 
 Build the paper (needs TeX Live or MiKTeX):
 
 ```sh
-pdflatex main.tex && pdflatex main.tex
+cd paper && pdflatex main.tex && pdflatex main.tex
 ```
 
 <details>
@@ -53,17 +53,12 @@ pdflatex main.tex && pdflatex main.tex
 <details>
 <summary>Files</summary>
 
-| File | |
-| --- | --- |
-| `main.tex` | Paper |
-| `analysis.py` | Cleaning, model and figures |
-| `Quality of Service 5G.csv` | Dataset |
-| `fig1.png` | Predicted allocation vs signal strength by app |
-| `fig2.png` | Allocation distribution by app |
-| `fig3.png` | Feature importance |
-| `fig4.png` | Predicted vs actual |
-| `dashboard.png` | All of the above on one page |
-| `signal_vs_resource.png`, `latency_vs_resource.png`, `bandwidth_efficiency.png` | Extra plots |
+```text
+analysis.py     cleaning, model and figures
+data/           5G QoS dataset (Sobhy, 2023)
+figures/        generated plots, dashboard.png has them all
+paper/          LaTeX source of the paper
+```
 
 </details>
 
