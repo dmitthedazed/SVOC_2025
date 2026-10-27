@@ -1,0 +1,24 @@
+name: Problem
+description: The code doesn't run, or something in the results or paper looks wrong
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What's wrong
+      description: Where it is (file, figure, section) and what you expected.
+    validations:
+      required: true
+
+  - type: textarea
+    id: error
+    attributes:
+      label: Error
+      description: Traceback or output, if the script fails.
+      render: text
+
+  - type: input
+    id: env
+    attributes:
+      label: Python version and OS
+      placeholder: Python 3.12, Ubuntu 24.04

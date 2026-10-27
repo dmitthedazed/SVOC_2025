@@ -9,10 +9,10 @@ authors:
     email: xsavin@stuba.sk
 date-released: "2025-01-01"
 license: MIT
-repository-code: "https://github.com/<your-username>/SVOC_2025"
+repository-code: "https://github.com/dmitthedazed/SVOC_2025"
 abstract: >
-  This project applies Data Science techniques — data cleaning, feature
-  engineering, and a RandomForestRegressor — to analyse and predict
+  This project applies Data Science techniques (data cleaning, feature
+  engineering and a RandomForestRegressor) to analyse and predict
   resource allocation in 5G networks using the 5G Quality of Service
   dataset (Sobhy, 2023). The study achieves an R² of 0.922 and
   demonstrates that application type and required bandwidth are the
